@@ -11,9 +11,26 @@ const promise = new Promise((resolve, reject) => {
 	}
 });
 
-promise.then( ( response ) => {
-    console.log(`Yay! Promise resolved with response: ${ response }`);
-  }).catch((error) => {
-    console.log(`Boo. Promise rejected with response: ${ error }`   );
-  }
+//	 TASK - 1	 \\
+
+promise
+	.then( ( response ) => {
+    	console.log(`Yay! Promise resolved with response: ${ response }`);
+  	})
+	.catch((error) => {
+		console.log(`Boo. Promise rejected with response: ${ error }`   );
+  	}
 );
+
+
+//	 TASK - 2	 \\
+
+const getPromiseResponse = async () => {
+	try {
+		const result  = await promise;
+		console.log(`Yay! Promise resolved with response: ${ result  }`);
+	} catch (error) {
+		console.log(`Boo. Promise rejected with response: ${ error }`  );
+	}
+};
+getPromiseResponse();
